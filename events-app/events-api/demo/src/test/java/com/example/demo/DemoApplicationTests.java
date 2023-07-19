@@ -6,8 +6,19 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class DemoApplicationTests {
 
+    @Autowired
+    private EventController eventController;
+
     @Test
-    void contextLoads() {
+    public void testEventController() {
+        assertThat(eventController).isNotNull();
     }
 
+    @Autowired
+    private UserController userController;
+
+    @Test
+    public void testUserController() {
+        assertThat(userController).isNotNull();
+    }
 }
